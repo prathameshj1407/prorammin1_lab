@@ -140,6 +140,10 @@ class RequisitionManagement:
         while True:
 
             item_name = input("Enter Item Name: ")
+            while item_name == "":
+                print("Item Name cannot be empty, Please write an Item Name.")
+                item_name = input("Enter Item Name: ")
+
             item_price = float(input("Enter Item Price: "))
             while item_price <= 0:
                 print("price should be greater than Zero.")
