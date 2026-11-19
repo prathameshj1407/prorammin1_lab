@@ -119,7 +119,8 @@ class RequisitionManagement:
     def submit_requisition(self):
 
         date = input("Enter Date: ")
-        while date == "":
+        while not (len(date) == 10 and date[2] == "-" and date[5] == "-" and date[0:2].isdigit()
+                   and date[3:5].isdigit() and date[6:10].isdigit()):
             print("Date cannot be empty and Date should be in the format DD-MM-YYYY.")
             date = input("Enter Date: ")
 
