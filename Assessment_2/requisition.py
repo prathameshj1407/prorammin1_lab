@@ -158,8 +158,11 @@ class RequisitionManagement:
             items.append(item)
 
             choice = input("Add another item (yes/no): ")
+            while choice.lower() != "yes" and choice.lower() != "no":
+                print("Invalid choice. Please enter yes or no.")
+                choice = input("Add another item (yes/no): ")
 
-            if choice.lower() != "yes":
+            if choice.lower() != "no":
                 break
 
         requisition.add_requisition(items)
